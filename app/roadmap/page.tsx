@@ -177,24 +177,22 @@ const RoadmapPage: React.FC = () => {
                 {/* Phase Image */}
                 <div className="lg:w-1/2">
                   <motion.div
-                    className="p-8 shadow-2xl bg-gradient-brand rounded-2xl"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <div className="p-6 bg-white rounded-xl">
-                      <div className="flex items-center justify-center h-64 rounded-lg bg-gradient-to-br from-primary-green/20 to-yellow-500/20">
-                        <div className="text-center">
-                          <div
-                            className={`text-2xl font-bold text-${phase.color} mb-2`}
-                          >
-                            {phase.phase}
-                          </div>
-                          <p className="text-slate-600">Our roadmap journey</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+                                className="relative overflow-hidden shadow-2xl rounded-2xl"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                              >
+                                <div className="relative overflow-hidden h-96 rounded-xl">
+                                  <img
+                                    src="/Tese Animated Images_21.png"
+                                    alt="African creators using Tese platform"
+                                    className="absolute inset-0 object-cover w-full h-full"
+                                    width={800}
+                                    height={600}
+                                  />
+                                  <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+                                </div>
+                              </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -301,7 +299,7 @@ const RoadmapPage: React.FC = () => {
               something truly revolutionary.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r bg-primary-green">
                 Get Started Today
               </Button>
               <Button

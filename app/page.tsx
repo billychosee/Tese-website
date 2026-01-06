@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   CreditCard,
   Users,
@@ -46,72 +46,212 @@ const GlassCard = ({
   </div>
 );
 
+const HERO_IMAGES = [
+  "/Tese Animated Images_1.png",
+  "/Tese Animated Images_2.png",
+  "/Tese Animated Images_3.png",
+  "/Tese Animated Images_4.png",
+  "/Tese Animated Images_5.png",
+];
+
 const HomePage: React.FC = () => {
+  const [index, setIndex] = useState(0);
+
+  // Interval set to 5000ms
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const getImage = (offset: number) => {
+    return HERO_IMAGES[
+      (index + offset + HERO_IMAGES.length) % HERO_IMAGES.length
+    ];
+  };
+
   return (
     <div className="min-h-screen bg-[#050508] text-white selection:bg-primary-green/40 overflow-x-hidden">
       <Navigation />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative z-10 pt-32 pb-24 overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative z-10 pt-32 pb-24 overflow-hidden min-h-[85vh] flex items-center flex-col">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-25 grayscale mix-blend-screen" />
+          <div className="absolute inset-0 bg-[url('/Tese Animated Images_1.png')] bg-cover bg-center opacity-25 grayscale mix-blend-screen" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#050508] via-[#050508]/80 to-[#050508]" />
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary-green/20 blur-[120px] rounded-full" />
           <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-yellow-500/15 blur-[80px] rounded-full" />
           <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-primary-green/10 blur-[90px] rounded-full" />
         </div>
 
-        <div className="container relative z-10 px-6 mx-auto text-center">
+        {/* 1. TEXT CONTENT FIRST */}
+        <div className="container relative z-10 px-6 mx-auto mb-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center px-4 py-2 mb-6 space-x-3 text-sm border rounded-full bg-white/5 border-white/10 backdrop-blur-md"
+            className="inline-flex items-center px-4 py-1.5 mb-6 space-x-3 text-xs border rounded-full bg-white/5 border-white/10 backdrop-blur-md"
           >
             <span className="flex w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
-            <span className="text-slate-300">
+            <span className="font-medium tracking-wide uppercase text-slate-300">
               Zimbabwe's Definitive Creative Hub
             </span>
-            <Sparkles className="w-4 h-4 text-primary-green" />
+            <Sparkles className="w-3.5 h-3.5 text-primary-green" />
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-7xl"
+            className="max-w-3xl mx-auto mb-6 text-4xl font-extrabold leading-tight md:text-6xl"
           >
             You focus on your craft. <br />
-            <span className="text-transparent bg-gradient-to-r from-primary-green via-yellow-500 to-primary-green bg-clip-text">
+            <span className="font-bold text-primary-green">
               We power your business.
             </span>
           </motion.h1>
 
-          <motion.p className="max-w-2xl mx-auto mb-10 text-lg leading-relaxed md:text-xl text-slate-400">
+          <motion.p className="max-w-xl mx-auto mb-8 text-base md:text-lg text-slate-400">
             Tese is the integrated creator platform built for Africa. We combine
-            creation tools and monetization into one seamless mobile-first
-            experience.
+            creation tools and monetization into one seamless experience.
           </motion.p>
 
-          <motion.div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row">
-            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button className="px-8 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
               Start Earning Now
             </Button>
-            <Link href="/features">
-              <Button
-                variant="secondary"
-                className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-              >
-                Explore Features
-              </Button>
-            </Link>
-          </motion.div>
+            <Button
+              variant="secondary"
+              className="px-8 py-3 text-sm rounded-full border-primary-green/50 text-primary-green"
+            >
+              Explore Features
+            </Button>
+          </div>
         </div>
 
+        {/* --- WIDE CAROUSEL --- */}
+      <section className="relative py-24 ">
+        <div className="container px-6 mx-auto">
+          <div className="relative w-full max-w-[1600px] h-[400px] md:h-[550px] flex items-center justify-center">
+            <AnimatePresence mode="popLayout">
+              {/* 1. FAR LEFT */}
+              <motion.div
+                key={`far-left-${index}`}
+                initial={{ opacity: 0, x: -150 }}
+                animate={{
+                  opacity: 0.1,
+                  x: -550,
+                  scale: 0.65,
+                  filter: "blur(10px)",
+                  zIndex: 10,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="absolute hidden 2xl:block w-[320px] h-[400px] rounded-[2rem] overflow-hidden grayscale"
+              >
+                <img
+                  src={getImage(-2)}
+                  className="object-cover w-full h-full"
+                  alt=""
+                />
+              </motion.div>
+
+              {/* 2. NEAR LEFT */}
+              <motion.div
+                key={`near-left-${index}`}
+                initial={{ opacity: 0, x: -80 }}
+                animate={{
+                  opacity: 0.35,
+                  x: -300,
+                  scale: 0.8,
+                  filter: "blur(4px)",
+                  zIndex: 20,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10 grayscale"
+              >
+                <img
+                  src={getImage(-1)}
+                  className="object-cover w-full h-full"
+                  alt=""
+                />
+              </motion.div>
+
+              {/* 3. CENTER (ACTIVE) */}
+              <motion.div
+                key={`center-${index}`}
+                initial={{ opacity: 0, scale: 0.9, zIndex: 30 }}
+                animate={{ opacity: 1, scale: 1, x: 0, zIndex: 30 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="relative w-[300px] md:w-[420px] h-[400px] md:h-[550px] rounded-[3.5rem] p-1.5 bg-gradient-to-b from-white/20 to-transparent shadow-2xl"
+              >
+                <div className="w-full h-full rounded-[3.2rem] overflow-hidden border-2 border-white/20">
+                  <img
+                    src={getImage(0)}
+                    className="object-cover w-full h-full"
+                    alt="Featured Creator"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </div>
+              </motion.div>
+
+              {/* 4. NEAR RIGHT */}
+              <motion.div
+                key={`near-right-${index}`}
+                initial={{ opacity: 0, x: 80 }}
+                animate={{
+                  opacity: 0.35,
+                  x: 300,
+                  scale: 0.8,
+                  filter: "blur(4px)",
+                  zIndex: 20,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10 grayscale"
+              >
+                <img
+                  src={getImage(1)}
+                  className="object-cover w-full h-full"
+                  alt=""
+                />
+              </motion.div>
+
+              {/* 5. FAR RIGHT */}
+              <motion.div
+                key={`far-right-${index}`}
+                initial={{ opacity: 0, x: 150 }}
+                animate={{
+                  opacity: 0.1,
+                  x: 550,
+                  scale: 0.65,
+                  filter: "blur(10px)",
+                  zIndex: 10,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="absolute hidden 2xl:block w-[320px] h-[400px] rounded-[2rem] overflow-hidden grayscale"
+              >
+                <img
+                  src={getImage(2)}
+                  className="object-cover w-full h-full"
+                  alt=""
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
         {/* --- CREATIVE DIVIDER --- */}
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-green/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-primary-green/50"></div>
         <div className="absolute -bottom-1 left-1/4 w-3 h-3 rounded-full bg-yellow-500 blur-[3px] animate-pulse"></div>
         <div className="absolute -bottom-1 right-1/4 w-3 h-3 rounded-full bg-primary-green blur-[3px] animate-pulse"></div>
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-500 blur-[4px] animate-pulse"></div>
       </section>
+
+      
 
       {/* --- THE GAP SECTION --- */}
       <section className="relative py-24 overflow-hidden bg-black/40">
@@ -126,7 +266,7 @@ const HomePage: React.FC = () => {
               </h2>
               <p className="mb-6 leading-relaxed text-slate-400">
                 Africa has talent that competes globally, but lacks the system
-                that supports monetization. Creators fail because it’s difficult
+                that supports monetization. Creators fail because it's difficult
                 to get paid, distribute, and scale.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -182,35 +322,40 @@ const HomePage: React.FC = () => {
                 <span className="text-slate-300">Coming Soon</span>
                 <Sparkles className="w-4 h-4 text-primary-green" />
               </div>
-              
+
               <h2 className="text-5xl font-bold leading-tight">
                 Premium Video Hub
               </h2>
-              
+
               <p className="text-lg leading-relaxed text-slate-400">
-                Launch your own streaming empire with secure hosting, premium series support,
-                and cinematic-quality delivery. This is where your content becomes your business.
+                Launch your own streaming empire with secure hosting, premium
+                series support, and cinematic-quality delivery. This is where
+                your content becomes your business.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 border rounded-2xl bg-white/5 border-white/10">
                   <div className="flex items-center justify-center w-8 h-8 mb-2 text-primary-green bg-primary-green/10 rounded-xl">
                     <Video className="w-4 h-4" />
                   </div>
                   <p className="text-sm font-medium">Secure Hosting</p>
-                  <p className="text-xs text-slate-500">Enterprise-grade protection</p>
+                  <p className="text-xs text-slate-500">
+                    Enterprise-grade protection
+                  </p>
                 </div>
                 <div className="p-4 border rounded-2xl bg-white/5 border-white/10">
                   <div className="flex items-center justify-center w-8 h-8 mb-2 text-yellow-500 bg-yellow-500/10 rounded-xl">
                     <Zap className="w-4 h-4" />
                   </div>
                   <p className="text-sm font-medium">Cinematic Quality</p>
-                  <p className="text-xs text-slate-500">HD streaming experience</p>
+                  <p className="text-xs text-slate-500">
+                    HD streaming experience
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
                   Get Early Access
                 </Button>
                 <Button
@@ -225,12 +370,14 @@ const HomePage: React.FC = () => {
             {/* Right Side - Visual Element */}
             <div className="relative">
               <div className="relative p-8 border rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border-white/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-green/20 to-yellow-500/20 rounded-3xl blur-xl"></div>
+                <div className="absolute inset-0 bg-primary-green/20 rounded-3xl blur-xl"></div>
                 <div className="relative z-10 bg-[#0D0D12] rounded-2xl p-8 border border-white/20">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 rounded-full bg-primary-green animate-pulse"></div>
-                      <span className="text-sm text-slate-400">Live Preview</span>
+                      <span className="text-sm text-slate-400">
+                        Live Preview
+                      </span>
                     </div>
                     <div className="flex space-x-2">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -238,23 +385,25 @@ const HomePage: React.FC = () => {
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     </div>
                   </div>
-                  
+
                   <div className="p-6 bg-black border rounded-xl border-white/20">
                     <div className="grid grid-cols-3 gap-4 mb-4">
-                      <div className="h-24 border rounded-lg bg-gradient-to-br from-primary-green/20 to-yellow-500/20 border-white/20"></div>
-                      <div className="h-24 border rounded-lg bg-gradient-to-br from-primary-green/20 to-yellow-500/20 border-white/20"></div>
-                      <div className="h-24 border rounded-lg bg-gradient-to-br from-primary-green/20 to-yellow-500/20 border-white/20"></div>
+                      <div className="h-24 border rounded-lg bg-primary-green/20 border-white/20"></div>
+                      <div className="h-24 border rounded-lg bg-primary-green/20 border-white/20"></div>
+                      <div className="h-24 border rounded-lg bg-primary-green/20 border-white/20"></div>
                     </div>
-                    <div className="flex items-center justify-center h-48 border rounded-lg bg-gradient-to-br from-white/10 to-white/5 border-white/30">
+                    <div className="flex items-center justify-center h-48 border rounded-lg bg-white/10 border-white/30">
                       <div className="text-center">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-primary-green/20">
                           <Video className="w-8 h-8 text-primary-green" />
                         </div>
-                        <p className="text-sm text-slate-400">Your Content Here</p>
+                        <p className="text-sm text-slate-400">
+                          Your Content Here
+                        </p>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between mt-6 text-xs text-slate-500">
                     <span>Secure • Fast • Reliable</span>
                     <span>Coming Soon</span>
@@ -340,4 +489,3 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-

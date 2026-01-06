@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="relative bg-[#050508] text-slate-300 border-t border-white/10">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-green/5 to-primary-yellow/5"></div>
+      <div className="absolute inset-0 bg-primary-green/5"></div>
       <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand Section */}

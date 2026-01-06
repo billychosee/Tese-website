@@ -112,7 +112,7 @@ const AboutPage: React.FC = () => {
       {/* --- HERO SECTION --- */}
       <section className="relative z-10 pt-32 pb-24 overflow-hidden min-h-[85vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527141748537-4d58a4938eca?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale mix-blend-screen" />
+          <div className="absolute inset-0 bg-[url('/Tese Animated Images_12.png')] bg-cover bg-center opacity-20 grayscale mix-blend-screen" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#050508] via-[#050508]/80 to-[#050508]" />
           <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-yellow-500/10 blur-[100px] rounded-full" />
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary-green/10 blur-[120px] rounded-full" />
@@ -135,7 +135,7 @@ const AboutPage: React.FC = () => {
             className="max-w-4xl mx-auto mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-7xl"
           >
             Building Africa's <br />
-            <span className="text-transparent bg-gradient-to-r from-primary-green via-yellow-500 to-primary-green bg-clip-text">
+            <span className="font-bold text-primary-green">
               Creator Economy
             </span>
           </motion.h1>
@@ -147,7 +147,7 @@ const AboutPage: React.FC = () => {
           </motion.p>
 
           <motion.div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row">
-            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
               Join Our Mission
             </Button>
             <Link href="/features">
@@ -162,7 +162,7 @@ const AboutPage: React.FC = () => {
         </div>
 
         {/* --- CREATIVE DIVIDER --- */}
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-yellow-500/50"></div>
         <div className="absolute -bottom-1 left-1/3 w-3 h-3 rounded-full bg-yellow-500 blur-[3px] animate-pulse"></div>
         <div className="absolute -bottom-1 right-1/3 w-3 h-3 rounded-full bg-primary-green blur-[3px] animate-pulse"></div>
       </section>
@@ -199,7 +199,7 @@ const AboutPage: React.FC = () => {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
                   Our Team
                 </Button>
                 <Button
@@ -212,40 +212,40 @@ const AboutPage: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="relative overflow-hidden rounded-2xl shadow-2xl"
+              className="relative overflow-hidden shadow-2xl rounded-2xl"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="relative h-96 overflow-hidden rounded-xl">
-                <div className="grid grid-cols-3 gap-4 h-full">
-                  <div className="col-span-2 relative">
+              <div className="relative overflow-hidden h-96 rounded-xl">
+                <div className="grid h-full grid-cols-3 gap-4">
+                  <div className="relative col-span-2">
                     <img
-                      src="/demo.jpg"
+                      src="/Tese Animated Images_13.png"
                       alt="African creators working together"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-green/30 to-yellow-500/30 mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-primary-green/30 mix-blend-overlay"></div>
                   </div>
                   <div className="space-y-4">
                     <div className="relative h-1/3">
                       <img
-                        src="/demo.jpg"
+                        src="/Tese Animated Images_14.png"
                         alt="African technology and innovation"
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 object-cover w-full h-full"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-green/40 to-yellow-500/40 mix-blend-overlay"></div>
+                      <div className="absolute inset-0 bg-primary-green/40 mix-blend-overlay"></div>
                     </div>
-                    <div className="relative h-2/3 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-lg overflow-hidden">
+                    <div className="relative overflow-hidden border rounded-lg h-2/3 bg-gradient-to-br from-white/10 to-white/5 border-white/20">
                       <img
-                        src="/demo.jpg"
+                        src="/Tese Animated Images_15.png"
                         alt="African creative economy"
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 object-cover w-full h-full"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-green/20 to-yellow-500/20 mix-blend-overlay"></div>
+                      <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center text-white">
-                          <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 backdrop-blur-sm">
                             <Sparkles className="w-8 h-8 text-primary-green" />
                           </div>
                           <p className="text-sm font-medium">Our Vision</p>
@@ -254,10 +254,14 @@ const AboutPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-4">
+                <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center h-16 pb-4 bg-gradient-to-t from-black/60 to-transparent">
                   <div className="text-center text-white">
-                    <div className="text-sm font-medium">Building Africa's Creator Economy</div>
-                    <div className="text-xs text-white/80">One creator at a time</div>
+                    <div className="text-sm font-medium">
+                      Building Africa's Creator Economy
+                    </div>
+                    <div className="text-xs text-white/80">
+                      One creator at a time
+                    </div>
                   </div>
                 </div>
               </div>
@@ -338,7 +342,7 @@ const AboutPage: React.FC = () => {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-green/50 to-yellow-500/50 transform -translate-x-1/2"></div>
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary-green/50 transform -translate-x-1/2"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -439,7 +443,7 @@ const AboutPage: React.FC = () => {
               more inclusive digital economy.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
                 Get Started
               </Button>
               <Button
@@ -459,5 +463,3 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
-
-

@@ -58,31 +58,33 @@ const Navigation: React.FC = () => {
                   <div
                     className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
                       isActive
-                        ? "w-full bg-gradient-to-r from-primary-green to-primary-yellow"
-                        : "w-0 group-hover:w-full bg-gradient-to-r from-primary-green to-primary-yellow"
+                        ? "w-full bg-primary-green"
+                        : "w-0 group-hover:w-full bg-primary-green"
                     }`}
                   ></div>
                 </Link>
               );
             })}
-            <Button className="px-6 py-2.5 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-primary-yellow">
+            <Button className="px-6 py-2.5 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
               Get Started Free
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
+            <motion.button
               onClick={toggleMenu}
               className="p-2 transition-all rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-green"
               aria-label="Toggle menu"
+              whileTap={{ scale: 0.95 }}
+              animate={{ rotate: isMenuOpen ? 180 : 0 }}
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
               ) : (
                 <Menu className="w-6 h-6" />
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
 
@@ -91,34 +93,66 @@ const Navigation: React.FC = () => {
           {isMenuOpen && (
             <motion.div
               className="border-t border-white/10"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, height: 0, y: -20 }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div className="py-4 space-y-4">
-                {navigationItems.map((item) => {
+              <div className="py-6 space-y-2">
+                {navigationItems.map((item, index) => {
                   const isActive = pathname === item.href;
                   return (
-                    <Link
+                    <motion.div
                       key={item.name}
-                      href={item.href}
-                      className={`block font-medium transition-colors duration-200 ${
-                        isActive
-                          ? "text-white"
-                          : "text-slate-300 hover:text-white"
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
                     >
-                      {item.name}
-                    </Link>
+                      <Link
+                        href={item.href}
+                        className={`block px-4 py-3 font-medium transition-all duration-200 rounded-lg ${
+                          isActive
+                            ? "text-white bg-white/5"
+                            : "text-slate-300 hover:text-white hover:bg-white/5"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{item.name}</span>
+                          {isActive && (
+                            <motion.div
+                              className="w-2 h-2 rounded-full bg-primary-green"
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                            />
+                          )}
+                        </div>
+                        {isActive && (
+                          <motion.div
+                            className="mt-2 h-0.5 w-full bg-primary-green"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                          />
+                        )}
+                      </Link>
+                    </motion.div>
                   );
                 })}
-                <div className="pt-4 border-t border-white/10">
-                  <Button className="w-full px-6 py-2.5 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-primary-yellow">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.3 }}
+                  className="px-4 pt-4 border-t border-white/10"
+                >
+                  <Button 
+                    className="w-full px-6 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Get Started Free
                   </Button>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           )}
@@ -129,5 +163,3 @@ const Navigation: React.FC = () => {
 };
 
 export default Navigation;
-
-
