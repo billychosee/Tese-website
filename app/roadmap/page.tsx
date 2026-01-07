@@ -97,7 +97,7 @@ const RoadmapPage: React.FC = () => {
           </motion.p>
 
           <motion.div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row">
-            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r from-primary-green to-yellow-500">
+            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r bg-primary-green">
               Join the Journey
             </Button>
             <Link href="/features">

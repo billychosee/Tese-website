@@ -197,18 +197,6 @@ const AboutPage: React.FC = () => {
                   needed most.
                 </p>
               </div>
-
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                  Our Team
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-                >
-                  Careers
-                </Button>
-              </div>
             </motion.div>
 
             <motion.div
@@ -217,53 +205,91 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
+              <div className="relative grid grid-cols-3 gap-4 h-96 rounded-xl">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src="/Tese Animated Images_15.png"
+                    alt="African creators working together"
+                    className="absolute inset-0 object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+                </div>
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src="/Tese Animated Images_17.png"
+                    alt="African creators working together"
+                    className="absolute inset-0 object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+                </div>
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src="/Tese Animated Images_16.png"
+                    alt="African creators working together"
+                    className="absolute inset-0 object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- PREMIUM VIDEO HUB --- */}
+      <section className="relative py-24 overflow-hidden bg-black/40">
+        <div className="container px-6 mx-auto">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <motion.div
+              className="relative overflow-hidden shadow-2xl rounded-2xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className="relative overflow-hidden h-96 rounded-xl">
-                <div className="grid h-full grid-cols-3 gap-4">
-                  <div className="relative col-span-2">
-                    <img
-                      src="/Tese Animated Images_13.png"
-                      alt="African creators working together"
-                      className="absolute inset-0 object-cover w-full h-full"
-                    />
-                    <div className="absolute inset-0 bg-primary-green/30 mix-blend-overlay"></div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="relative h-1/3">
-                      <img
-                        src="/Tese Animated Images_14.png"
-                        alt="African technology and innovation"
-                        className="absolute inset-0 object-cover w-full h-full"
-                      />
-                      <div className="absolute inset-0 bg-primary-green/40 mix-blend-overlay"></div>
-                    </div>
-                    <div className="relative overflow-hidden border rounded-lg h-2/3 bg-gradient-to-br from-white/10 to-white/5 border-white/20">
-                      <img
-                        src="/Tese Animated Images_15.png"
-                        alt="African creative economy"
-                        className="absolute inset-0 object-cover w-full h-full"
-                      />
-                      <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center text-white">
-                          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 backdrop-blur-sm">
-                            <Sparkles className="w-8 h-8 text-primary-green" />
-                          </div>
-                          <p className="text-sm font-medium">Our Vision</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center h-16 pb-4 bg-gradient-to-t from-black/60 to-transparent">
-                  <div className="text-center text-white">
-                    <div className="text-sm font-medium">
-                      Building Africa's Creator Economy
-                    </div>
-                    <div className="text-xs text-white/80">
-                      One creator at a time
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src="/Tese Animated Images_18.png"
+                  alt="Premium Video Hub"
+                  className="absolute inset-0 object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div>
+                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                  Premium Video Hub
+                </h2>
+                <p className="mb-6 text-lg leading-relaxed text-slate-400">
+                  Our premium video hosting platform provides creators with
+                  professional-grade tools to showcase their content.
+                </p>
+                <p className="mb-6 text-lg leading-relaxed text-slate-400">
+                  From high-quality streaming to advanced analytics, we give you
+                  everything you need to build a successful video business.
+                </p>
+                <p className="text-lg leading-relaxed text-slate-400">
+                  Monetize your videos with subscriptions, pay-per-view, or ad
+                  revenue sharing.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                  Start Video Hub
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
+                >
+                  View Demo
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -314,70 +340,6 @@ const AboutPage: React.FC = () => {
                 </GlassCard>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- OUR JOURNEY --- */}
-      <section className="relative py-24 overflow-hidden bg-black/40">
-        <div className="container px-6 mx-auto">
-          <div className="max-w-4xl mx-auto mb-16 text-center">
-            <motion.h2
-              className="mb-6 text-4xl font-bold md:text-5xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Our Journey So Far
-            </motion.h2>
-            <motion.p
-              className="text-lg text-slate-400"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Key milestones in our mission to empower African creators.
-            </motion.p>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary-green/50 transform -translate-x-1/2"></div>
-
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  className={`relative ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } flex items-center gap-8`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  {/* Timeline dot */}
-                  <div
-                    className={`absolute left-1/2 top-8 w-4 h-4 bg-primary-green rounded-full transform -translate-x-1/2 -translate-y-1/2 lg:static lg:left-auto lg:top-auto lg:w-6 lg:h-6 lg:transform-none`}
-                  ></div>
-
-                  {/* Content */}
-                  <div className="lg:w-1/2">
-                    <GlassCard className="border-primary-green/20">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-slate-400">
-                          {milestone.year}
-                        </span>
-                        <Rocket className="w-5 h-5 text-primary-green" />
-                      </div>
-                      <h3 className="mb-2 text-xl font-semibold">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-slate-400">{milestone.description}</p>
-                    </GlassCard>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
