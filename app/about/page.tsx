@@ -150,7 +150,7 @@ const AboutPage: React.FC = () => {
             <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
               Join Our Mission
             </Button>
-            <Link href="/features">
+            <Link href="/contact">
               <Button
                 variant="secondary"
                 className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
@@ -405,15 +405,19 @@ const AboutPage: React.FC = () => {
               more inclusive digital economy.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                Get Started
-              </Button>
-              <Button
-                variant="secondary"
-                className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-              >
-                Contact Us
-              </Button>
+              <Link href="/contact">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                  Get Started
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  variant="secondary"
+                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -425,3 +429,4 @@ const AboutPage: React.FC = () => {
 };
 
 export default AboutPage;
+

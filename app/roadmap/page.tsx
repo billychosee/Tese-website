@@ -51,6 +51,7 @@ const RoadmapPage: React.FC = () => {
         "Multi-rail Payments",
         "Basic Analytics",
         "Mobile App",
+        "Video on Demand (Coming Soon)",
       ],
       description: "Core payment infrastructure and basic monetization tools.",
     },
@@ -177,22 +178,22 @@ const RoadmapPage: React.FC = () => {
                 {/* Phase Image */}
                 <div className="lg:w-1/2">
                   <motion.div
-                                className="relative overflow-hidden shadow-2xl rounded-2xl"
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                              >
-                                <div className="relative overflow-hidden h-96 rounded-xl">
-                                  <img
-                                    src="/Tese Animated Images_21.png"
-                                    alt="African creators using Tese platform"
-                                    className="absolute inset-0 object-cover w-full h-full"
-                                    width={800}
-                                    height={600}
-                                  />
-                                  <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
-                                </div>
-                              </motion.div>
+                    className="relative overflow-hidden shadow-2xl rounded-2xl"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <div className="relative overflow-hidden h-96 rounded-xl">
+                      <img
+                        src="/Tese Animated Images_21.png"
+                        alt="African creators using Tese platform"
+                        className="absolute inset-0 object-cover w-full h-full"
+                        width={800}
+                        height={600}
+                      />
+                      <div className="absolute inset-0 bg-primary-green/20 mix-blend-overlay"></div>
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -299,15 +300,19 @@ const RoadmapPage: React.FC = () => {
               something truly revolutionary.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r bg-primary-green">
-                Get Started Today
-              </Button>
-              <Button
-                variant="secondary"
-                className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-              >
-                Contact Our Team
-              </Button>
+              <Link href="/contact">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-gradient-to-r bg-primary-green">
+                  Get Started Today
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  variant="secondary"
+                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
+                >
+                  Contact Our Team
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -319,3 +324,4 @@ const RoadmapPage: React.FC = () => {
 };
 
 export default RoadmapPage;
+

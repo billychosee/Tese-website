@@ -238,15 +238,19 @@ const FeaturesPage: React.FC = () => {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                  Get Started Free
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-                >
-                  Request Demo
-                </Button>
+                <Link href="/contact">
+                  <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                    Get Started Free
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="secondary"
+                    className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
+                  >
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -289,15 +293,19 @@ const FeaturesPage: React.FC = () => {
               sustainable businesses with Tese.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                Start Creating Now
-              </Button>
-              <Button
-                variant="secondary"
-                className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-              >
-                Contact Sales
-              </Button>
+              <Link href="/contact">
+                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                  Start Creating Now
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  variant="secondary"
+                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
+                >
+                  Contact Sales
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -309,3 +317,4 @@ const FeaturesPage: React.FC = () => {
 };
 
 export default FeaturesPage;
+

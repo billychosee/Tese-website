@@ -14,9 +14,10 @@ const Navigation: React.FC = () => {
 
   const navigationItems = [
     { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     { name: "Features", href: "/features" },
     { name: "Roadmap", href: "/roadmap" },
-    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const toggleMenu = () => {
@@ -49,9 +50,7 @@ const Navigation: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   className={`relative font-medium transition-all duration-200 ${
-                    isActive
-                      ? "text-white"
-                      : "text-slate-300 hover:text-white"
+                    isActive ? "text-white" : "text-slate-300 hover:text-white"
                   } group`}
                 >
                   {item.name}
@@ -65,9 +64,11 @@ const Navigation: React.FC = () => {
                 </Link>
               );
             })}
-            <Button className="px-6 py-2.5 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-              Get Started Free
-            </Button>
+            <Link href="/contact">
+              <Button className="px-6 py-2.5 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                Get Started Free
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -124,7 +125,11 @@ const Navigation: React.FC = () => {
                               className="w-2 h-2 rounded-full bg-primary-green"
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
-                              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                              transition={{
+                                type: "spring",
+                                stiffness: 500,
+                                damping: 30,
+                              }}
                             />
                           )}
                         </div>
@@ -146,12 +151,14 @@ const Navigation: React.FC = () => {
                   transition={{ delay: 0.4, duration: 0.3 }}
                   className="px-4 pt-4 border-t border-white/10"
                 >
-                  <Button 
-                    className="w-full px-6 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Get Started Free
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="w-full px-6 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Get Started Free
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

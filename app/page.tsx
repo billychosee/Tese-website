@@ -25,6 +25,7 @@ import {
   Briefcase,
   Smile,
 } from "lucide-react";
+import Link from "next/link";
 import Navigation from "../components/layout/Navigation";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
@@ -268,15 +269,19 @@ const HomePage: React.FC = () => {
             creation tools and monetization into one seamless experience.
           </motion.p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button className="px-8 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-              Start Earning Now
-            </Button>
-            <Button
-              variant="secondary"
-              className="px-8 py-3 text-sm rounded-full border-primary-green/50 text-primary-green"
-            >
-              Explore Features
-            </Button>
+            <Link href="/contact">
+              <Button className="px-8 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                Start Earning Now
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                variant="secondary"
+                className="px-8 py-3 text-sm rounded-full border-primary-green/50 text-primary-green"
+              >
+                Explore Features
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -365,15 +370,19 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full bg-primary-green">
-                  Get Started Free
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green"
-                >
-                  Request Demo
-                </Button>
+                <Link href="/contact">
+                  <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full bg-primary-green">
+                    Get Started Free
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="secondary"
+                    className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green"
+                  >
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
             </div>
             <motion.div
@@ -489,7 +498,9 @@ const HomePage: React.FC = () => {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.tese.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center px-6 py-3 space-x-3 transition-all bg-white border rounded-full shadow-lg hover:bg-white/90 border-white/20 hover:scale-[1.02] min-w-[180px]"
                 >
                   <img
@@ -507,7 +518,9 @@ const HomePage: React.FC = () => {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="https://apps.apple.com/app/tese-creator-platform/id123456789"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center px-6 py-3 space-x-3 transition-all bg-white border rounded-full shadow-lg hover:bg-white/90 border-white/20 hover:scale-[1.02] min-w-[180px]"
                 >
                   <img src="/apple.svg" alt="App Store" className="w-5 h-5" />

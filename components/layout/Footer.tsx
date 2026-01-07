@@ -6,163 +6,217 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Globe,
-  Users,
-  Shield,
-  ArrowRight,
-  X,
   Linkedin,
   Instagram,
+  Send,
+  ChevronUp,
+  ArrowRight,
 } from "lucide-react";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
-    {
-      title: "Product",
-      links: [
-        { name: "Features", href: "/features" },
-        { name: "Pricing", href: "#" },
-        { name: "Roadmap", href: "/roadmap" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { name: "About", href: "/about" },
-        { name: "Blog", href: "#" },
-        { name: "Careers", href: "#" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { name: "Help Center", href: "#" },
-        { name: "Contact Us", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-      ],
-    },
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Features", href: "/features" },
+    { name: "Roadmap", href: "/roadmap" },
+  ];
+
+  const supportLinks = [
+    { name: "Contact Us", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms", href: "/terms" },
   ];
 
   return (
-    <footer className="relative bg-[#050508] text-slate-300 border-t border-white/10">
-      <div className="absolute inset-0 bg-primary-green/5"></div>
-      <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+    <footer className="relative bg-[#050508] text-slate-300 border-t border-white/10 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary-green/10 blur-[120px] rounded-full opacity-50" />
+
+      <div className="relative px-4 pt-20 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand Section */}
           <motion.div
-            className="md:col-span-1"
+            className="space-y-8 lg:col-span-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            <Link href="/" className="flex items-center mb-6">
+            <Link
+              href="/"
+              className="inline-block transition-transform hover:scale-[1.02] active:scale-95"
+            >
               <Image
                 src="/Tese-Light-Logo.png"
                 alt="Tese Logo"
-                width={200}
-                height={50}
-                className="w-auto h-12"
+                width={180}
+                height={45}
+                className="object-contain w-auto h-10"
               />
             </Link>
-            <p className="max-w-xs mb-6 leading-relaxed text-slate-400">
+            <p className="max-w-sm leading-relaxed text-slate-400">
               You focus on your craft. We power your business. Building Africa's
               creator economy.
             </p>
-            <div className="flex space-x-4">
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-xl bg-white/5 hover:bg-primary-green/20 hover:scale-105"
-              >
-                <svg
-                  className="w-5 h-5 text-primary-green"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
+            <div className="flex space-x-3">
+              {[
+                { icon: <Linkedin size={20} />, href: "#" },
+                { icon: <Instagram size={20} />, href: "#" },
+                {
+                  icon: (
+                    <svg
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  ),
+                  href: "#",
+                },
+              ].map((social, i) => (
+                <Link
+                  key={i}
+                  href={social.href}
+                  className="p-3 transition-all duration-300 border shadow-lg rounded-xl bg-white/5 border-white/10 hover:border-primary-green/50 hover:bg-primary-green/10 hover:-translate-y-1 shadow-black/20"
                 >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-xl bg-white/5 hover:bg-primary-green/20 hover:scale-105"
-              >
-                <Linkedin className="w-5 h-5 text-primary-green" />
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-all duration-300 rounded-xl bg-white/5 hover:bg-primary-green/20 hover:scale-105"
-              >
-                <Instagram className="w-5 h-5 text-primary-green" />
-              </Link>
+                  <div className="transition-colors text-slate-400 hover:text-primary-green">
+                    {social.icon}
+                  </div>
+                </Link>
+              ))}
             </div>
           </motion.div>
 
-          {/* Links Sections */}
-          {footerLinks.map((section, index) => (
-            <motion.div
-              key={section.title}
-              className="space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-            >
-              <h3 className="text-lg font-semibold text-white">
-                {section.title}
+          {/* Links Section - Center (Quick Links & Support) */}
+          <div className="grid grid-cols-2 gap-8 lg:col-span-4 lg:px-4">
+            {/* Column 1: Quick Links */}
+            <div className="space-y-6">
+              <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-white/50">
+                Quick Links
               </h3>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
+              <ul className="space-y-4">
+                {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="flex items-center space-x-2 transition-all duration-300 text-slate-400 hover:text-white hover:translate-x-1"
+                      className="flex items-center gap-2 transition-all duration-300 group text-slate-400 hover:text-white"
                     >
-                      <ArrowRight className="w-4 h-4 text-primary-green" />
+                      <ArrowRight className="w-4 h-4 transition-transform text-primary-green group-hover:translate-x-1" />
                       <span>{link.name}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          ))}
+            </div>
+
+            {/* Column 2: Support */}
+            <div className="space-y-6">
+              <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-white/50">
+                Support
+              </h3>
+              <ul className="space-y-4">
+                {supportLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="flex items-center gap-2 transition-all duration-300 group text-slate-400 hover:text-white"
+                    >
+                      <ArrowRight className="w-4 h-4 transition-transform text-primary-green group-hover:translate-x-1" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Newsletter Section */}
+          <motion.div
+            className="lg:col-span-4 space-y-6 p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/5"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-white">
+                Join the movement
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-400">
+                Get the latest updates on creator tools and ecosystem news.
+              </p>
+            </div>
+            <form className="relative group">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="w-full px-4 py-4 transition-all border rounded-2xl bg-white/5 border-white/10 focus:outline-none focus:border-primary-green/50 focus:bg-white/[0.08] placeholder:text-slate-600"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute flex items-center gap-2 px-5 py-2 text-sm font-bold text-black transition-colors rounded-xl right-2 top-2 bottom-2 bg-primary-green hover:shadow-[0_0_20px_rgba(var(--primary-green-rgb),0.3)]"
+              >
+                Join <Send size={14} strokeWidth={3} />
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          className="flex flex-col items-center justify-between pt-12 mt-12 border-t border-white/10 md:flex-row"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <div className="flex items-center space-x-6">
-            <p className="text-sm text-slate-400">
-              © {currentYear} Smatech Group. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-2 text-xs text-slate-500">
-              <Shield className="w-4 h-4 text-primary-green" />
-              <span>Secure & Trusted</span>
+        {/* Bottom Bar */}
+        <div className="pt-8 mt-8 border-t border-white/5">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap items-center text-[13px] gap-x-8 gap-y-4 text-slate-500">
+              <p className="italic font-medium tracking-tight">
+                © {currentYear}{" "}
+                <Link
+                  href="https://smatechgroup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Smatech Group
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div className="flex items-center gap-8">
+              <div className="items-center hidden gap-2 text-xs font-medium tracking-widest uppercase sm:flex text-slate-500">
+                <Globe size={14} className="text-primary-green/70" />
+                <Link
+                  href="/terms"
+                  className="transition-colors hover:text-white"
+                >
+                  Terms and Conditions
+                </Link>
+                <span className="text-slate-600">|</span>
+                <Link
+                  href="/privacy-policy"
+                  className="transition-colors hover:text-white"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+              <button
+                onClick={scrollToTop}
+                className="p-3 transition-all border rounded-full border-white/10 hover:bg-white/5 hover:border-white/20 group bg-[#0A0A0E]"
+                aria-label="Scroll to top"
+              >
+                <ChevronUp
+                  size={18}
+                  className="transition-transform group-hover:-translate-y-1 text-slate-400 group-hover:text-white"
+                />
+              </button>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-4 mt-4 md:mt-0 md:flex-row">
-            <div className="flex space-x-6">
-              <Link
-                href="/terms"
-                className="text-sm transition-colors duration-300 text-slate-400 hover:text-white"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/privacy-policy"
-                className="text-sm transition-colors duration-300 text-slate-400 hover:text-white"
-              >
-                Privacy Policy
-              </Link>
-            </div>
-            <div className="flex items-center space-x-2 text-xs text-slate-500">
-              <Globe className="w-4 h-4 text-primary-green" />
-              <span>Made for Africa</span>
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
