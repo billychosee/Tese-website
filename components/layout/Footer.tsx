@@ -34,10 +34,10 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-[#050508] text-slate-300 border-t border-white/10 overflow-hidden">
+    <footer className="relative overflow-hidden border-t bg-independence text-neutral-300 border-neutral-800/50">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary-green/10 blur-[120px] rounded-full opacity-50" />
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-harvest-green/10 blur-[120px] rounded-full opacity-50" />
 
       <div className="relative px-4 pt-20 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 className="object-contain w-auto h-10"
               />
             </Link>
-            <p className="max-w-sm leading-relaxed text-slate-400">
+            <p className="max-w-sm leading-relaxed text-neutral-400">
               You focus on your craft. We power your business. Building Africa's
               creator economy.
             </p>
@@ -84,9 +84,9 @@ const Footer: React.FC = () => {
                 <Link
                   key={i}
                   href={social.href}
-                  className="p-3 transition-all duration-300 border shadow-lg rounded-xl bg-white/5 border-white/10 hover:border-primary-green/50 hover:bg-primary-green/10 hover:-translate-y-1 shadow-black/20"
+                  className="p-3 transition-all duration-300 border shadow-lg rounded-xl bg-off-white/5 border-neutral-800/50 hover:border-harvest-green/50 hover:bg-harvest-green/10 hover:-translate-y-1 shadow-black/20"
                 >
-                  <div className="transition-colors text-slate-400 hover:text-primary-green">
+                  <div className="transition-colors text-neutral-400 hover:text-harvest-green">
                     {social.icon}
                   </div>
                 </Link>
@@ -106,9 +106,9 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-2 transition-all duration-300 group text-slate-400 hover:text-white"
+                      className="flex items-center gap-2 transition-all duration-300 group text-neutral-400 hover:text-off-white"
                     >
-                      <ArrowRight className="w-4 h-4 transition-transform text-primary-green group-hover:translate-x-1" />
+                      <ArrowRight className="w-4 h-4 transition-transform text-harvest-green group-hover:translate-x-1" />
                       <span>{link.name}</span>
                     </Link>
                   </li>
@@ -126,9 +126,9 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-2 transition-all duration-300 group text-slate-400 hover:text-white"
+                      className="flex items-center gap-2 transition-all duration-300 group text-neutral-400 hover:text-off-white"
                     >
-                      <ArrowRight className="w-4 h-4 transition-transform text-primary-green group-hover:translate-x-1" />
+                      <ArrowRight className="w-4 h-4 transition-transform text-harvest-green group-hover:translate-x-1" />
                       <span>{link.name}</span>
                     </Link>
                   </li>
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
 
           {/* Newsletter Section */}
           <motion.div
-            className="lg:col-span-4 space-y-6 p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/5"
+            className="lg:col-span-4 space-y-6 p-8 rounded-3xl bg-gradient-to-b from-off-white/[0.04] to-transparent border border-neutral-800/50"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -156,12 +156,12 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Email address"
-                className="w-full px-4 py-4 transition-all border rounded-2xl bg-white/5 border-white/10 focus:outline-none focus:border-primary-green/50 focus:bg-white/[0.08] placeholder:text-slate-600"
+                className="w-full px-4 py-4 transition-all border rounded-2xl bg-off-white/5 border-neutral-800/50 focus:outline-none focus:border-harvest-green/50 focus:bg-off-white/[0.08] placeholder:text-neutral-600"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute flex items-center gap-2 px-5 py-2 text-sm font-bold text-black transition-colors rounded-xl right-2 top-2 bottom-2 bg-primary-green hover:shadow-[0_0_20px_rgba(var(--primary-green-rgb),0.3)]"
+                className="absolute flex items-center gap-2 px-5 py-2 text-sm font-bold text-independence transition-colors rounded-xl right-2 top-2 bottom-2 bg-harvest-green hover:shadow-[0_0_20px_rgba(var(--harvest-green-rgb),0.3)]"
               >
                 Join <Send size={14} strokeWidth={3} />
               </motion.button>
@@ -170,9 +170,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-white/5">
+        <div className="pt-8 mt-8 border-t border-neutral-800/50">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap items-center text-[13px] gap-x-8 gap-y-4 text-slate-500">
+            <div className="flex flex-wrap items-center text-[13px] gap-x-8 gap-y-4 text-neutral-500">
               <p className="italic font-medium tracking-tight">
                 © {currentYear}{" "}
                 <Link
@@ -188,30 +188,30 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-8">
-              <div className="items-center hidden gap-2 text-xs font-medium tracking-widest uppercase sm:flex text-slate-500">
-                <Globe size={14} className="text-primary-green/70" />
+              <div className="items-center hidden gap-2 text-xs font-medium tracking-widest uppercase sm:flex text-neutral-500">
+                <Globe size={14} className="text-harvest-green/70" />
                 <Link
                   href="/terms"
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-off-white"
                 >
                   Terms and Conditions
                 </Link>
                 <span className="text-slate-600">|</span>
                 <Link
                   href="/privacy-policy"
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-off-white"
                 >
                   Privacy Policy
                 </Link>
               </div>
               <button
                 onClick={scrollToTop}
-                className="p-3 transition-all border rounded-full border-white/10 hover:bg-white/5 hover:border-white/20 group bg-[#0A0A0E]"
+                className="p-3 transition-all border rounded-full border-neutral-800/50 hover:bg-off-white/5 hover:border-neutral-800/20 group bg-independence"
                 aria-label="Scroll to top"
               >
                 <ChevronUp
                   size={18}
-                  className="transition-transform group-hover:-translate-y-1 text-slate-400 group-hover:text-white"
+                  className="transition-transform group-hover:-translate-y-1 text-neutral-400 group-hover:text-off-white"
                 />
               </button>
             </div>

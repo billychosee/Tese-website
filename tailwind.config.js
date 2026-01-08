@@ -9,40 +9,80 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors
+        // Tese Brand Colors
+        independence: "#1A1A1A", // Primary Text, Backgrounds - Structure, bold authority
+        "harvest-green": "#2E7D32", // Success States, Call-to-Action - Growth, money, land
+        "gold-standard": "#F9A825", // Highlights, Accents - Wealth, minerals, optimism
+        "heartbeat-red": "#C62828", // Errors, Alerts, "Live" Badges - Passion, urgency, sacrifice
+        "off-white": "#F5F5F5", // Backgrounds - Cleanliness, clarity (avoids harsh pure white)
+        
+        // Extended color palette for flexibility
         primary: {
-          green: "#22C55E", // Growth, money, empowerment
-          yellow: "#F59E0B", // Opportunity, energy
-          red: "#EF4444", // African identity, urgency
+          DEFAULT: "#2E7D32", // Harvest Green
+          50: "#E8F5E9",
+          100: "#C8E6C9",
+          200: "#A5D6A7",
+          300: "#81C784",
+          400: "#66BB6A",
+          500: "#2E7D32",
+          600: "#2E7D32",
+          700: "#1B5E20",
+          800: "#117D11",
+          900: "#00695C",
         },
-        // Standard Yellow Colors
-        yellow: {
-          50: "#fefce8",
-          100: "#fef3c7",
-          200: "#fde68a",
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#FFD700", // Gold yellow
-          600: "#d97706",
-          700: "#b45309",
-          800: "#92400e",
-          900: "#78350f",
+        accent: {
+          DEFAULT: "#F9A825", // Gold Standard
+          50: "#FFF3E0",
+          100: "#FFE0B2",
+          200: "#FFCC80",
+          300: "#FFB74D",
+          400: "#FFA726",
+          500: "#F9A825",
+          600: "#F57C00",
+          700: "#EF6C00",
+          800: "#E65100",
+          900: "#BF360C",
         },
-        // Neutral Colors
+        danger: {
+          DEFAULT: "#C62828", // Heartbeat Red
+          50: "#FFEBEE",
+          100: "#FFCDD2",
+          200: "#EF9A9A",
+          300: "#E57373",
+          400: "#EF5350",
+          500: "#C62828",
+          600: "#B71C1C",
+          700: "#D32F2F",
+          800: "#C62828",
+          900: "#B71C1C",
+        },
+        neutral: {
+          DEFAULT: "#1A1A1A", // Independence (Black)
+          50: "#F5F5F5", // Off-White
+          100: "#E0E0E0",
+          200: "#BDBDBD",
+          300: "#9E9E9E",
+          400: "#757575",
+          500: "#424242",
+          600: "#212121",
+          700: "#1A1A1A",
+          800: "#121212",
+          900: "#000000",
+        },
         background: {
+          DEFAULT: "#F5F5F5", // Off-White
           light: "#FFFFFF",
-          dark: "#0F172A", // Slate 900
-          gray: "#F8FAFC", // Slate 50
+          dark: "#1A1A1A", // Independence
         },
         text: {
-          primary: "#0F172A", // Slate 900
-          secondary: "#64748B", // Slate 500
-          muted: "#94A3B8", // Slate 400
+          primary: "#1A1A1A", // Independence
+          secondary: "#424242",
+          muted: "#757575",
           white: "#FFFFFF",
         },
         border: {
-          light: "#E2E8F0", // Slate 200
-          dark: "#1E293B", // Slate 800
+          light: "#E0E0E0",
+          dark: "#424242",
         },
       },
       fontFamily: {
@@ -61,13 +101,13 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-brand":
-          "linear-gradient(135deg, #22C55E 0%, #FFD700 50%, #EF4444 100%)",
-        "gradient-green-yellow":
-          "linear-gradient(135deg, #22C55E 0%, #FFD700 100%)",
-        "gradient-red-yellow":
-          "linear-gradient(135deg, #EF4444 0%, #FFD700 100%)",
-        "gradient-green-red":
-          "linear-gradient(135deg, #22C55E 0%, #EF4444 100%)",
+          "linear-gradient(135deg, #2E7D32 0%, #F9A825 50%, #C62828 100%)",
+        "gradient-harvest-gold":
+          "linear-gradient(135deg, #2E7D32 0%, #F9A825 100%)",
+        "gradient-heartbeat-gold":
+          "linear-gradient(135deg, #C62828 0%, #F9A825 100%)",
+        "gradient-harvest-heartbeat":
+          "linear-gradient(135deg, #2E7D32 0%, #C62828 100%)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

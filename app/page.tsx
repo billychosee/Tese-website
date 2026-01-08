@@ -33,16 +33,66 @@ import Button from "../components/ui/Button";
 // --- DATA STRUCTURES ---
 
 const HERO_ITEMS = [
-  { src: "/Tese Animated Images_14.png", category: "Music", description: "Afrobeats rising stars streaming live.", icon: Music },
-  { src: "/Tese Animated Images_28.jpeg", category: "Photography", description: "Capturing the streets of Harare.", icon: Camera },
-  { src: "/Tese Animated Images_30.jpeg", category: "Digital Art", description: "NFT collections taking over.", icon: Palette },
-  { src: "/Tese Animated Images_31.jpeg", category: "Gaming", description: "Zim's top eSports contenders.", icon: Gamepad2 },
-  { src: "/Tese Animated Images_33.jpeg", category: "Podcasts", description: "Real conversations, uncensored.", icon: Mic },
-  { src: "/Tese Animated Images_35.png", category: "Sports", description: "Athletes monetizing their journey.", icon: Trophy },
-  { src: "/Tese Animated Images_37.png", category: "Business", description: "Entrepreneurs sharing the blueprint.", icon: Briefcase },
-  { src: "/Tese Animated Images_43.png", category: "Fashion", description: "Local designers going global.", icon: ShoppingBag },
-  { src: "/Tese Animated Images_46.png", category: "Comedy", description: "The new wave of stand-up specials.", icon: Smile },
-  { src: "/Tese Animated Images_49.png", category: "Filmmaking", description: "Independent cinema finds a home.", icon: Video },
+  {
+    src: "/Tese Animated Images_14.png",
+    category: "Music",
+    description: "Afrobeats rising stars streaming live.",
+    icon: Music,
+  },
+  {
+    src: "/Tese Animated Images_28.jpeg",
+    category: "Photography",
+    description: "Capturing the streets of Harare.",
+    icon: Camera,
+  },
+  {
+    src: "/Tese Animated Images_30.jpeg",
+    category: "Digital Art",
+    description: "NFT collections taking over.",
+    icon: Palette,
+  },
+  {
+    src: "/Tese Animated Images_31.jpeg",
+    category: "Gaming",
+    description: "Zim's top eSports contenders.",
+    icon: Gamepad2,
+  },
+  {
+    src: "/Tese Animated Images_33.jpeg",
+    category: "Podcasts",
+    description: "Real conversations, uncensored.",
+    icon: Mic,
+  },
+  {
+    src: "/Tese Animated Images_35.png",
+    category: "Sports",
+    description: "Athletes monetizing their journey.",
+    icon: Trophy,
+  },
+  {
+    src: "/Tese Animated Images_37.png",
+    category: "Business",
+    description: "Entrepreneurs sharing the blueprint.",
+    icon: Briefcase,
+  },
+  {
+    src: "/Tese Animated Images_43.png",
+    category: "Fashion",
+    description: "Local designers going global.",
+    icon: ShoppingBag,
+  },
+  {
+    src: "/Tese Animated Images_46.png",
+    category: "Comedy",
+    description: "The new wave of stand-up specials.",
+    icon: Smile,
+  },
+  {
+    src: "/Tese Animated Images_49.png",
+    category: "Filmmaking",
+    description: "Independent cinema finds a home.",
+    icon: Video,
+  },
 ];
 
 const PAYMENT_METHODS = [
@@ -56,27 +106,55 @@ const PAYMENT_METHODS = [
 
 // --- REUSABLE COMPONENTS ---
 
-const GlassCard = ({ className, children }: { className?: string; children: React.ReactNode }) => (
-  <div className={`relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0D0D12]/80 backdrop-blur-xl p-8 ${className}`}>
-    <div className="pointer-events-none absolute -top-24 -left-24 h-48 w-48 rounded-full bg-primary-green/10 blur-[100px]" />
+const GlassCard = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <div
+    className={`relative overflow-hidden rounded-[2.5rem] border border-neutral-800/50 bg-independence/80 backdrop-blur-xl p-8 ${className}`}
+  >
+    <div className="pointer-events-none absolute -top-24 -left-24 h-48 w-48 rounded-full bg-harvest-green/10 blur-[100px]" />
     <div className="relative z-10 h-full">{children}</div>
   </div>
 );
 
-const ImageOverlay = ({ item, isCenter = false }: { item: any; isCenter?: boolean }) => {
+const ImageOverlay = ({
+  item,
+  isCenter = false,
+}: {
+  item: any;
+  isCenter?: boolean;
+}) => {
   const Icon = item.icon;
   return (
     <div className="absolute inset-0 z-20 pointer-events-none">
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 flex items-start gap-4 p-6">
-        <div className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 ${isCenter ? 'bg-primary-green text-black' : 'bg-white/10 text-white'}`}>
+        <div
+          className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 ${
+            isCenter
+              ? "bg-harvest-green text-independence"
+              : "bg-off-white/10 text-off-white"
+          }`}
+        >
           <Icon size={20} />
         </div>
         <div className="text-left">
-          <h3 className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${isCenter ? 'text-primary-green' : 'text-slate-300'}`}>
+          <h3
+            className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${
+              isCenter ? "text-harvest-green" : "text-neutral-300"
+            }`}
+          >
             {item.category}
           </h3>
-          <p className={`text-sm font-medium leading-tight line-clamp-2 ${isCenter ? 'text-white' : 'text-slate-400'}`}>
+          <p
+            className={`text-sm font-medium leading-tight line-clamp-2 ${
+              isCenter ? "text-off-white" : "text-neutral-400"
+            }`}
+          >
             {item.description}
           </p>
         </div>
@@ -102,28 +180,28 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white selection:bg-primary-green/40 overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-independence text-off-white selection:bg-harvest-green/40">
       <Navigation />
 
       {/* --- HERO SECTION --- */}
       <section className="relative z-10 pt-32 pb-24 overflow-hidden min-h-[85vh] flex items-center flex-col">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[url('/Tese Animated Images_1.png')] bg-cover bg-center opacity-25 grayscale mix-blend-screen" />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#050508] via-[#050508]/80 to-[#050508]" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary-green/20 blur-[120px] rounded-full" />
+          <div className="absolute inset-0 bg-gradient-to-br from-independence via-independence/80 to-independence" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-harvest-green/20 blur-[120px] rounded-full" />
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center px-4 py-1.5 mb-6 space-x-3 text-xs border rounded-full bg-white/5 border-white/10 backdrop-blur-md"
+          className="inline-flex items-center px-4 py-1.5 mb-6 space-x-3 text-xs border rounded-full bg-off-white/5 border-neutral-800/50 backdrop-blur-md"
         >
-          <span className="flex w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
-          <span className="font-medium tracking-wide uppercase text-slate-300">
+          <span className="flex w-2 h-2 rounded-full bg-gold-standard animate-pulse" />
+          <span className="font-medium tracking-wide uppercase text-neutral-300">
             Zimbabwe's Definitive Creative Hub
           </span>
-          <Zap className="w-3.5 h-3.5 text-primary-green" />
-          <Sparkles className="w-3.5 h-3.5 text-primary-green" />
+          <Zap className="w-3.5 h-3.5 text-harvest-green" />
+          <Sparkles className="w-3.5 h-3.5 text-harvest-green" />
         </motion.div>
 
         {/* --- CAROUSEL --- */}
@@ -168,7 +246,7 @@ const HomePage: React.FC = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
-                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10"
+                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-neutral-800/50"
               >
                 <div className="relative w-full h-full">
                   <img
@@ -187,9 +265,9 @@ const HomePage: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, x: 0, zIndex: 30 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
-                className="relative w-[300px] md:w-[420px] h-[320px] md:h-[450px] rounded-[3rem] p-1 bg-gradient-to-b from-white/20 via-transparent to-primary-green/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                className="relative w-[300px] md:w-[420px] h-[320px] md:h-[450px] rounded-[3rem] p-1 bg-gradient-to-b from-off-white/20 via-transparent to-harvest-green/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
               >
-                <div className="w-full h-full rounded-[2.9rem] overflow-hidden border-x border-t border-white/10 border-b-[6px] border-b-primary-green relative bg-black">
+                <div className="w-full h-full rounded-[2.9rem] overflow-hidden border-x border-t border-neutral-800/50 border-b-[6px] border-b-harvest-green relative bg-independence">
                   <img
                     src={getItem(0).src}
                     className="object-cover w-full h-full"
@@ -212,7 +290,7 @@ const HomePage: React.FC = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
-                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10"
+                className="absolute hidden lg:block w-[380px] h-[480px] rounded-[2.5rem] overflow-hidden border border-neutral-800/50"
               >
                 <div className="relative w-full h-full">
                   <img
@@ -270,14 +348,14 @@ const HomePage: React.FC = () => {
           </motion.p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/contact">
-              <Button className="px-8 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+              <Button className="px-8 py-3 text-sm font-bold border-none rounded-full shadow-lg text-independence shadow-harvest-green/20 bg-harvest-green hover:bg-primary-600">
                 Start Earning Now
               </Button>
             </Link>
             <Link href="/contact">
               <Button
                 variant="secondary"
-                className="px-8 py-3 text-sm rounded-full border-primary-green/50 text-primary-green"
+                className="px-8 py-3 text-sm rounded-full border-harvest-green/50 text-harvest-green"
               >
                 Explore Features
               </Button>
@@ -578,3 +656,4 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+

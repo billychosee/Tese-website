@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#050508]/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800/50 bg-independence/80 backdrop-blur-xl">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,15 +50,17 @@ const Navigation: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   className={`relative font-medium transition-all duration-200 ${
-                    isActive ? "text-white" : "text-slate-300 hover:text-white"
+                    isActive
+                      ? "text-off-white"
+                      : "text-neutral-300 hover:text-off-white"
                   } group`}
                 >
                   {item.name}
                   <div
                     className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
                       isActive
-                        ? "w-full bg-primary-green"
-                        : "w-0 group-hover:w-full bg-primary-green"
+                        ? "w-full bg-harvest-green"
+                        : "w-0 group-hover:w-full bg-harvest-green"
                     }`}
                   ></div>
                 </Link>
@@ -75,7 +77,7 @@ const Navigation: React.FC = () => {
           <div className="md:hidden">
             <motion.button
               onClick={toggleMenu}
-              className="p-2 transition-all rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-green"
+              className="p-2 transition-all rounded-lg text-neutral-300 hover:text-off-white hover:bg-off-white/10 focus:outline-none focus:ring-2 focus:ring-harvest-green"
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
               animate={{ rotate: isMenuOpen ? 180 : 0 }}
@@ -93,7 +95,7 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="border-t border-white/10"
+              className="border-t border-neutral-800/50"
               initial={{ opacity: 0, height: 0, y: -20 }}
               animate={{ opacity: 1, height: "auto", y: 0 }}
               exit={{ opacity: 0, height: 0, y: -20 }}
@@ -113,8 +115,8 @@ const Navigation: React.FC = () => {
                         href={item.href}
                         className={`block px-4 py-3 font-medium transition-all duration-200 rounded-lg ${
                           isActive
-                            ? "text-white bg-white/5"
-                            : "text-slate-300 hover:text-white hover:bg-white/5"
+                            ? "text-off-white bg-off-white/5"
+                            : "text-neutral-300 hover:text-off-white hover:bg-off-white/5"
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -122,7 +124,7 @@ const Navigation: React.FC = () => {
                           <span>{item.name}</span>
                           {isActive && (
                             <motion.div
-                              className="w-2 h-2 rounded-full bg-primary-green"
+                              className="w-2 h-2 rounded-full bg-harvest-green"
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
                               transition={{
@@ -135,7 +137,7 @@ const Navigation: React.FC = () => {
                         </div>
                         {isActive && (
                           <motion.div
-                            className="mt-2 h-0.5 w-full bg-primary-green"
+                            className="mt-2 h-0.5 w-full bg-harvest-green"
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -149,11 +151,11 @@ const Navigation: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.3 }}
-                  className="px-4 pt-4 border-t border-white/10"
+                  className="px-4 pt-4 border-t border-neutral-800/50"
                 >
                   <Link href="/contact">
                     <Button
-                      className="w-full px-6 py-3 text-sm font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600"
+                      className="w-full px-6 py-3 text-sm font-bold border-none rounded-full shadow-lg text-independence shadow-harvest-green/20 bg-harvest-green hover:bg-primary-600"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Get Started Free

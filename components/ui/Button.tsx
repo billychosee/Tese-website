@@ -23,11 +23,11 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-primary-green hover:bg-green-600 text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 focus:ring-primary-green",
+      "bg-harvest-green hover:bg-primary-600 text-off-white shadow-md hover:shadow-lg transform hover:-translate-y-1 focus:ring-harvest-green",
     secondary:
-      "bg-white text-text-primary border-2 border-border-light hover:border-primary-green hover:text-primary-green shadow-sm hover:shadow-md",
+      "bg-off-white text-independence border-2 border-neutral-200 hover:border-harvest-green hover:text-harvest-green shadow-sm hover:shadow-md",
     ghost:
-      "bg-transparent text-text-primary hover:text-primary-green hover:bg-background-gray/50",
+      "bg-transparent text-independence hover:text-harvest-green hover:bg-off-white/50",
   };
 
   const sizeClasses = {
