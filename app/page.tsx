@@ -634,7 +634,7 @@ const HomePage: React.FC = () => {
           </h2>
           <Button
             variant="secondary"
-            className="px-8 py-3 text-sm font-bold text-black transition-all border-none rounded-full shadow-xl shadow-white/10 hover:bg-primary-green hover:text-white"
+            className="px-8 py-3 text-sm font-bold text-black transition-all border-none rounded-full shadow-xl shadow-white/10 hover:bg-primary-green hover:text-black"
           >
             Go Live in 5 Minutes
           </Button>
