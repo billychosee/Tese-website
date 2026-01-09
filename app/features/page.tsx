@@ -46,55 +46,49 @@ const FeaturesPage: React.FC = () => {
       icon: <LinkIcon className="w-8 h-8" />,
       title: "Payment Links",
       description:
-        "Create custom payment links for any product or service in seconds. Share them anywhere and start receiving payments immediately.",
+        "Share a simple link and get paid in seconds. Turn any video, live session, service or shout-out into income, without needing a website or a foreign account.",
     },
     {
       icon: <CreditCard className="w-8 h-8" />,
       title: "Multi-rail Payments",
       description:
-        "Accept payments through multiple channels including cards, mobile money, and bank transfers. No customer left behind.",
+        "Let fans pay the way that works for them: cards or mobile money. Designed for African wallets and everyday realities, so no supporter is left out.",
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Split Payments",
-      description:
-        "Automatically split earnings between collaborators, team members, or partners with our smart payment distribution system.",
-    },
-    {
-      icon: <Calendar className="w-8 h-8" />,
       title: "Subscriptions",
       description:
-        "Create recurring revenue streams with flexible subscription plans. Keep your audience engaged and your income predictable.",
+        "Build reliable, recurring income. Offer monthly support tiers with exclusive access so your biggest fans can back you every single month.",
     },
     {
       icon: <Video className="w-8 h-8" />,
       title: "VOD Hosting",
       description:
-        "Host and monetize your video content with our high-quality video-on-demand platform. Control access and pricing.",
+        "Turn your videos into a library that pays you. Host shows, specials, classes or replays and put a price on the content you've worked hard to create.",
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
       title: "Courses",
       description:
-        "Create and sell online courses with our comprehensive learning management system. Track progress and engagement.",
+        "Package your knowledge into paid courses. Share your skills with your community and earn every time someone learns from you.",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Membership Communities",
       description:
-        "Build exclusive communities around your content. Offer premium access and foster deeper connections with your audience.",
+        "Build a home for your people. Create paid communities where your supporters get closer access, and you get stable, community-driven income.",
     },
     {
       icon: <ShoppingBag className="w-8 h-8" />,
       title: "Creator Storefronts",
       description:
-        "Set up your own branded storefront to sell digital products, merchandise, and services directly to your fans.",
+        "Launch your creator shop in minutes. Sell digital drops, merch, tickets and services from one link that feels like your brand.",
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
-      title: "Analytics Dashboard",
+      title: "Creator Dashboard",
       description:
-        "Access powerful analytics to understand your audience, track performance, and make data-driven decisions for growth.",
+        "See what's working at a glance. Track earnings, top supporters and content performance so you can make better creative and business decisions.",
     },
   ];
 
@@ -119,7 +113,7 @@ const FeaturesPage: React.FC = () => {
           >
             <span className="flex w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
             <span className="text-slate-300">
-              Everything You Need to Succeed
+              The platform where creators get paid what they're worth
             </span>
             <Sparkles className="w-4 h-4 text-primary-green" />
           </motion.div>
@@ -129,28 +123,20 @@ const FeaturesPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-7xl"
           >
-            Everything You Need to <br />
-            <span className="font-bold text-primary-green">
-              Succeed
-            </span>
+            The platform where creators get paid what <br />
+            <span className="font-bold text-primary-green">they're worth</span>
           </motion.h1>
 
           <motion.p className="max-w-2xl mx-auto mb-10 text-lg leading-relaxed md:text-xl text-slate-400">
-            From simple payment links to comprehensive business management, Tese
-            provides all the tools you need to build a sustainable creative
-            career.
+            Tese is the creator monetization platform built for Africa. Turn
+            your content, community and creativity into real income with tools
+            designed for how Africans actually earn and get paid.
           </motion.p>
 
           <motion.div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row">
-            <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-              Start Creating Today
-            </Button>
-            <Link href="/roadmap">
-              <Button
-                variant="secondary"
-                className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-              >
-                View All Features
+            <Link href="/contact">
+              <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
+                Start getting paid today
               </Button>
             </Link>
           </motion.div>
@@ -203,16 +189,16 @@ const FeaturesPage: React.FC = () => {
                   Built for African Creators
                 </h2>
                 <p className="text-lg leading-relaxed text-slate-400">
-                  Every feature is designed with the unique challenges and
-                  opportunities of the African creator economy in mind. From
-                  mobile-first interfaces to local payment methods, we've got
-                  you covered.
+                  Tese is made for the African creator economy, not adapted to
+                  it. Mobile-first, local payment rails and tools that respect
+                  the realities of creating, earning and getting paid on the
+                  continent.
                 </p>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 rounded-full bg-primary-green"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <span className="font-medium text-slate-300">
                     Mobile-optimized experience
                   </span>
@@ -230,7 +216,7 @@ const FeaturesPage: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 rounded-full bg-primary-green"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <span className="font-medium text-slate-300">
                     No technical expertise required
                   </span>
@@ -240,15 +226,7 @@ const FeaturesPage: React.FC = () => {
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link href="/contact">
                   <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                    Get Started Free
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    variant="secondary"
-                    className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-                  >
-                    Request Demo
+                    Start Creating Now
                   </Button>
                 </Link>
               </div>
@@ -286,24 +264,16 @@ const FeaturesPage: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-              Ready to Unlock Your Potential?
+              Ready to get paid what you're worth?
             </h2>
             <p className="max-w-xl mx-auto mb-8 text-lg text-slate-400">
-              Join thousands of African creators who are already building
-              sustainable businesses with Tese.
+              Join African creators who are turning followers into supporters
+              and supporters into sustainable income on Tese.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="/contact">
                 <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
                   Start Creating Now
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  variant="secondary"
-                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-                >
-                  Contact Sales
                 </Button>
               </Link>
             </div>
@@ -317,4 +287,3 @@ const FeaturesPage: React.FC = () => {
 };
 
 export default FeaturesPage;
-

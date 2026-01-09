@@ -16,7 +16,6 @@ const Navigation: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Features", href: "/features" },
-    { name: "Roadmap", href: "/roadmap" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -172,3 +171,4 @@ const Navigation: React.FC = () => {
 };
 
 export default Navigation;
+

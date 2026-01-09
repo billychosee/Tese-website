@@ -51,25 +51,25 @@ const AboutPage: React.FC = () => {
       icon: <Presentation className="w-8 h-8" />,
       title: "Mission",
       description:
-        "Empower African creators to build sustainable businesses through accessible, innovative technology.",
+        "Empower African creators to build sustainable, fairly‑paid businesses through simple, accessible tools and payment infrastructure built for Africa.",
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Vision",
       description:
-        "To be the leading creator platform in Africa, enabling millions to monetize their creativity.",
+        "To be the platform where millions of African creators get paid what they're worth, without leaving their communities or their craft.",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Focus",
       description:
-        "We meet creators where they are, providing tools that work in the African context.",
+        "We meet creators where they already create – TikTok, YouTube, Instagram, WhatsApp and live stages – and plug monetisation into that reality instead of asking them to start over.",
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Commitment",
       description:
-        "Building long-term financial infrastructure for the African creator economy.",
+        "We're building long-term financial rails for the African creator economy so that today's and tomorrow's creators can rely on Tese for income that's consistent, transparent and local.",
     },
   ];
 
@@ -145,14 +145,14 @@ const AboutPage: React.FC = () => {
           >
             Building Africa's <br />
             <span className="font-bold text-primary-green">
-              Creator Economy
+              Creator Economy, One Creator at a Time
             </span>
           </motion.h1>
 
           <motion.p className="max-w-2xl mx-auto mb-10 text-lg leading-relaxed md:text-xl text-slate-400">
-            We're on a mission to empower African creators with the tools and
-            infrastructure they need to turn their passion into sustainable
-            businesses.
+            Tese exists so African creators can get paid what they're worth. We're building
+            the tools and payment rails that turn talent, culture and community into real,
+            repeatable income.
           </motion.p>
 
           <motion.div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row">
@@ -191,19 +191,20 @@ const AboutPage: React.FC = () => {
                   Our Story
                 </h2>
                 <p className="mb-6 text-lg leading-relaxed text-slate-400">
-                  Tese was born from a simple observation: Africa has incredible
-                  talent, but lacks the infrastructure to support creators in
-                  building sustainable careers.
+                  Tese was born from a simple reality: African creators move the culture,
+                  but the money rarely reaches them. Africa has world-class talent, but not
+                  the infrastructure for creators to earn consistently from their work.
                 </p>
                 <p className="mb-6 text-lg leading-relaxed text-slate-400">
-                  Founded by Smatech Group, we set out to bridge this gap by
-                  creating a platform that understands the unique challenges and
-                  opportunities of the African creator economy.
+                  Founded by Smatech Group, we set out to bridge this gap by building a
+                  creator-first monetisation platform that understands African bandwidth,
+                  payment methods and audiences.
                 </p>
                 <p className="text-lg leading-relaxed text-slate-400">
-                  We started in Zimbabwe and are rapidly expanding across the
-                  continent, bringing world-class creator tools to where they're
-                  needed most.
+                  We started in Zimbabwe, working side by side with local creators to prove
+                  that audiences are willing to pay when you make it easy. Now we're taking
+                  that same creator-first approach across the continent. Tiri Tese – together
+                  we thrive.
                 </p>
               </div>
             </motion.div>
@@ -273,31 +274,27 @@ const AboutPage: React.FC = () => {
             >
               <div>
                 <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                  Premium Video Hub
+                  Subscription Video on Demand on Tese
                 </h2>
                 <p className="mb-6 text-lg leading-relaxed text-slate-400">
-                  Our premium video hosting platform provides creators with
-                  professional-grade tools to showcase their content.
+                  Turn your videos into a real income stream with Tese's Subscription
+                  Video on Demand feature.
                 </p>
                 <p className="mb-6 text-lg leading-relaxed text-slate-400">
-                  From high-quality streaming to advanced analytics, we give you
-                  everything you need to build a successful video business.
+                  From high-quality streaming to clear earnings and audience analytics,
+                  you get everything you need to build a sustainable video business on
+                  your own terms.
                 </p>
                 <p className="text-lg leading-relaxed text-slate-400">
-                  Monetize your videos with subscriptions, pay-per-view, or ad
-                  revenue sharing.
+                  Monetise your videos with subscriptions and pay‑per‑view access, without
+                  needing a foreign account or complex setup. Fans support you directly;
+                  Tese handles the payments, payouts and protection.
                 </p>
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
                   Start Video Hub
-                </Button>
-                <Button
-                  variant="secondary"
-                  className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
-                >
-                  View Demo
                 </Button>
               </div>
             </motion.div>
@@ -323,7 +320,7 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              These principles guide everything we do and build.
+              These are the promises we make to every creator who joins Tese.
             </motion.p>
           </div>
 
@@ -346,49 +343,6 @@ const AboutPage: React.FC = () => {
                   <p className="leading-relaxed text-slate-400">
                     {value.description}
                   </p>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- IMPACT SECTION --- */}
-      <section className="py-32 relative overflow-hidden bg-[#07070B]">
-        <div className="container px-6 mx-auto">
-          <div className="max-w-4xl mx-auto mb-16 text-center">
-            <motion.h2
-              className="mb-6 text-4xl font-bold md:text-5xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Making an Impact
-            </motion.h2>
-            <motion.p
-              className="text-lg text-slate-400"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              The numbers that drive us forward.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
-            {impactStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group"
-              >
-                <GlassCard className={`border-${stat.color}/20`}>
-                  <div className={`text-3xl font-bold text-${stat.color} mb-2`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-slate-400">{stat.label}</div>
                 </GlassCard>
               </motion.div>
             ))}
@@ -564,16 +518,16 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-              Join Our Mission
+              Join the movement
             </h2>
             <p className="max-w-xl mx-auto mb-8 text-lg text-slate-400">
-              Be part of the movement to empower African creators and build a
-              more inclusive digital economy.
+              Be part of a new reality where African creators don't just go viral,
+              they get paid.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="/contact">
                 <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full shadow-lg shadow-primary-green/20 bg-primary-green hover:bg-green-600">
-                  Get Started
+                  Get started free
                 </Button>
               </Link>
               <Link href="/contact">
@@ -581,7 +535,7 @@ const AboutPage: React.FC = () => {
                   variant="secondary"
                   className="px-8 py-3.5 text-md rounded-full border-primary-green/50 text-primary-green hover:bg-primary-green/10 hover:border-primary-green transition-all"
                 >
-                  Contact Us
+                  Talk to the Tese team
                 </Button>
               </Link>
             </div>

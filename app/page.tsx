@@ -337,27 +337,26 @@ const HomePage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto mb-6 text-4xl font-extrabold leading-tight md:text-6xl"
           >
-            You focus on your craft. <br />{" "}
-            <span className="font-bold text-primary-green">
-              We power your business.
-            </span>
+            The Platform Where Creators Get Paid What <br />{" "}
+            <span className="font-bold text-primary-green">They're Worth</span>
           </motion.h1>
           <motion.p className="max-w-xl mx-auto mb-8 text-base md:text-lg text-slate-400">
-            Tese is the integrated creator platform built for Africa. We combine
-            creation tools and monetization into one seamless experience.
+            Tese is the creator monetisation platform built for Africa. Turn
+            your content, community and creativity into real income with tools
+            designed for how Africans actually get paid.
           </motion.p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/contact">
               <Button className="px-8 py-3 text-sm font-bold border-none rounded-full shadow-lg text-independence shadow-harvest-green/20 bg-harvest-green hover:bg-primary-600">
-                Start Earning Now
+                Start getting paid now
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/features">
               <Button
                 variant="secondary"
                 className="px-8 py-3 text-sm rounded-full border-harvest-green/50 text-harvest-green"
               >
-                Explore Features
+                See how Tese works
               </Button>
             </Link>
           </div>
@@ -373,23 +372,19 @@ const HomePage: React.FC = () => {
                 The Critical Gap
               </h3>
               <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-                Infrastructure, not Creativity.
+                The gap between your influence and your income
               </h2>
               <p className="mb-6 leading-relaxed text-slate-400">
-                Africa has talent that competes globally, but lacks the system
-                that supports monetization.
+                African creators already compete globally. What's missing is the
+                payment and monetisation infrastructure that makes it easy for
+                fans to support you directly. Tese is building that missing
+                layer.
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 text-center border rounded-2xl bg-white/5 border-white/10">
-                  <p className="text-2xl font-bold text-white">73%</p>
-                  <p className="text-xs uppercase text-slate-500">
-                    Zim youth pursuing art
-                  </p>
-                </div>
+              <div className="gap-4 ">
                 <div className="p-4 text-center border rounded-2xl bg-white/5 border-white/10">
                   <p className="text-2xl font-bold text-white">$40B+</p>
                   <p className="text-xs uppercase text-slate-500">
-                    Africa Creator Economy
+                    African creator economy with broken payout rails
                   </p>
                 </div>
               </div>
@@ -398,10 +393,10 @@ const HomePage: React.FC = () => {
               <h2 className="text-4xl font-bold">Why Tese Wins</h2>
               <div className="space-y-4">
                 {[
-                  "Built for local payment realities (EcoCash, InnBucks)",
-                  "Mobile-first experience for African audiences",
-                  "Monetization-first, not just views",
-                  "Integrated financial infrastructure",
+                  "Built for local payment realities (EcoCash, InnBucks, cards) – no foreign bank account needed",
+                  "Mobile-first experience for creators and fans on the continent",
+                  "Monetisation-first, not just views – every link, stream and video can pay you",
+                  "Integrated financial rails so payouts are reliable, compliant and local",
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -431,11 +426,12 @@ const HomePage: React.FC = () => {
                 <Sparkles className="w-4 h-4 text-primary-green" />
               </div>
               <h2 className="text-5xl font-bold leading-tight">
-                Premium Video Hub
+                Subscription Video on Demand on Tese
               </h2>
               <p className="text-lg leading-relaxed text-slate-400">
-                Launch your own streaming empire with secure hosting, premium
-                series support, and cinematic-quality delivery.
+                Launch your own premium video hub where your best work lives
+                behind a paywall that works in Africa. Secure hosting, series
+                support and streaming built for African bandwidth.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 border rounded-2xl bg-white/5 border-white/10">
@@ -448,11 +444,6 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link href="/contact">
-                  <Button className="px-8 py-3.5 text-md font-bold text-black border-none rounded-full bg-primary-green">
-                    Get Started Free
-                  </Button>
-                </Link>
                 <Link href="/contact">
                   <Button
                     variant="secondary"
@@ -639,7 +630,7 @@ const HomePage: React.FC = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[400px] bg-primary-green/10 blur-[120px] rounded-full z-0" />
         <div className="container relative z-10 px-6 mx-auto">
           <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-            Authentic Stories. <br /> Sustainable Careers.
+            Authentic stories. <br /> Sustainable, fairly‑paid creator careers.
           </h2>
           <Button
             variant="secondary"

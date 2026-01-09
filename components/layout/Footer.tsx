@@ -24,11 +24,11 @@ const Footer: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Features", href: "/features" },
-    { name: "Roadmap", href: "/roadmap" },
   ];
 
   const supportLinks = [
-    { name: "Contact Us", href: "/contact" },
+    { name: "Get started free", href: "/contact" },
+    { name: "Talk to the Tese team", href: "/contact" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms", href: "/terms" },
   ];
@@ -61,8 +61,7 @@ const Footer: React.FC = () => {
               />
             </Link>
             <p className="max-w-sm leading-relaxed text-neutral-400">
-              You focus on your craft. We power your business. Building Africa's
-              creator economy.
+              The Platform Where Creators Get Paid What They're Worth.
             </p>
             <div className="flex space-x-3">
               {[
